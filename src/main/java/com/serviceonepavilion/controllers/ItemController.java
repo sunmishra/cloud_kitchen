@@ -19,7 +19,7 @@ public class ItemController {
 	@Autowired
 	ItemService itemService;
 	
-	@GetMapping("/getItem/{itemId}")
+	@GetMapping("/item/{itemId}")
 	public Item getItem(@PathVariable int itemId) {
 		Item item = itemService.getItemById(itemId);
 		return item;

@@ -1,10 +1,12 @@
 package com.serviceonepavilion.service.Impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.serviceonepavilion.entities.Item;
 import com.serviceonepavilion.entities.Menu;
 import com.serviceonepavilion.repository.ItemRepository;
 import com.serviceonepavilion.repository.MenuRepository;
@@ -25,17 +27,19 @@ public class MenuServiceImpl implements MenuService{
 		return m;
 	}
 
-	public int removeMenu(int id) {
+	public int deleteMenu(int id) {
 		menuRepository.deleteById(id);
 		return id;
 	}
 
-	public Menu getMenuById(int id) {
+	public Menu getMenuByResturantId(int id) {
 		return menuRepository.findById(id).get();
 	}
 
 	public List<Menu> findAllMenu() {
-		List<Menu> listItem = menuRepository.findAll();
+		//List<Menu> listItem = menuRepository.findAll();
+		List<Menu> listItem = new ArrayList<>();
+		menuRepository.findAll().forEach(listItem::add);
 		return listItem;
 	}
 	

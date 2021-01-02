@@ -1,5 +1,6 @@
 package com.serviceonepavilion.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -25,11 +26,29 @@ public class Customer {
 	@Column(name = "CUSTOMER_ADDRESS")
 	private Address customerAddress;
 
-	@OneToMany(/* mappedBy = "customerAddress", */ targetEntity = Address.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	//@OneToMany - non owning side here we use mappedBy
+	@OneToMany( mappedBy = "customerAddress",  targetEntity = Address.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Address> addressList;
 	
-	@OneToMany(/* mappedBy = "customerOrder", */ targetEntity = Order.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany( mappedBy = "customerOrder",  targetEntity = Order.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Order> orderList;
+
+
+	public Customer() {
+		addressList = new ArrayList<Address>();
+		orderList = new ArrayList<Order>();
+	}
+	
+	
+	public Customer(int customerId, String customerName, String customerContactNo, Address customerAddress,
+			List<Address> addressList, List<Order> orderList) {
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.customerContactNo = customerContactNo;
+		this.customerAddress = customerAddress;
+		this.addressList = addressList;
+		this.orderList = orderList;
+	}
 
 	public int getCustomerId() {
 		return customerId;

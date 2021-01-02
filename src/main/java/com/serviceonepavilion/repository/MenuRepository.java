@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.serviceonepavilion.entities.Item;
 import com.serviceonepavilion.entities.Menu;
 
-public interface MenuRepository extends JpaRepository<Menu, Integer>{
+public interface MenuRepository extends CrudRepository<Menu, Integer>{
 
 	Menu update();
 

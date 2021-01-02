@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.serviceonepavilion.entities.Item;
 import com.serviceonepavilion.entities.Order;
 
-public interface OrderRepository extends JpaRepository<Order, Integer>{
+public interface OrderRepository extends CrudRepository<Order, Integer>{
 
 	Order update();
 

@@ -27,11 +27,28 @@ public class Address {
 	@Column(name = "STATE")
 	private String state;
 	
+	//Owning side i.e. @ManyToOne- here we use @JoinCol
 	@ManyToOne(fetch = FetchType.LAZY, targetEntity = Customer.class, cascade = CascadeType.ALL)
 	@JoinColumn(name = "CUSTOMER_ID")
 	private Customer customerAddress;
 
 	
+	public Address() {
+		
+	}
+	
+	public Address(int addressId, String address, String houseNo, String cityName, String pincode, String state,
+			Customer customerAddress) {
+		super();
+		this.addressId = addressId;
+		this.address = address;
+		this.houseNo = houseNo;
+		this.cityName = cityName;
+		this.pincode = pincode;
+		this.state = state;
+		this.customerAddress = customerAddress;
+	}
+
 	public int getAddressId() {
 		return addressId;
 	}

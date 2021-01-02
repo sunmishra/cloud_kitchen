@@ -40,6 +40,10 @@ public class CustomerController {
 	public int removeCustomer(@PathVariable int customerId) {
 		return customerService.removeCustomer(customerId);
 	}
-	
+
+	@PostMapping("/address")
+	public void saveAddress(@RequestBody String address) {
+		return ;
+	}
 	
 }

@@ -1,5 +1,6 @@
 package com.serviceonepavilion.service.Impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,9 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	public List<Item> findAllItem() {
-		List<Item> listItem = itemRepository.findAll();
+		//List<Item> listItem = itemRepository.findAll();
+		List<Item> listItem = new ArrayList<>();
+		itemRepository.findAll().forEach(listItem::add);
 		return listItem;
 	}
 

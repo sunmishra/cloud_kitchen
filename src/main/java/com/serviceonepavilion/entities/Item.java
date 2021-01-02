@@ -28,6 +28,18 @@ public class Item {
 	@JoinColumn(name = "MENU_ID")
 	private Menu mId;
 
+	
+	public Item() {
+	}
+	
+	public Item(int itemId, String itemName, String itemCategory, double price, Menu mId) {
+		this.itemId = itemId;
+		this.itemName = itemName;
+		this.itemCategory = itemCategory;
+		this.price = price;
+		this.mId = mId;
+	}
+
 	public int getItemId() {
 		return itemId;
 	}

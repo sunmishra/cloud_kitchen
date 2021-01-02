@@ -31,12 +31,28 @@ public class Resturant {
 	private Time closingTime;
 	//workingdays
 	
-	@OneToOne(/* mappedBy = "resturantOrder", */ cascade = CascadeType.ALL, targetEntity = Order.class, fetch = FetchType.LAZY)
+	@OneToOne( mappedBy = "resturantOrder",  cascade = CascadeType.ALL, targetEntity = Order.class, fetch = FetchType.LAZY)
 	private Order order;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Menu.class )
 	@JoinColumn(name = "menuId", referencedColumnName = "MENU_ID")
 	private Menu resturantMenu;
+
+	
+	public Resturant() {
+	}
+	
+	public Resturant(int resturantId, String resturantName, String resturantContactNo, String resturantAddress,
+			Time openingTime, Time closingTime, Order order, Menu resturantMenu) {
+		this.resturantId = resturantId;
+		this.resturantName = resturantName;
+		this.resturantContactNo = resturantContactNo;
+		this.resturantAddress = resturantAddress;
+		this.openingTime = openingTime;
+		this.closingTime = closingTime;
+		this.order = order;
+		this.resturantMenu = resturantMenu;
+	}
 
 	public int getResturantId() {
 		return resturantId;

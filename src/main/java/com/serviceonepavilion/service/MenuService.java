@@ -8,9 +8,9 @@ public interface MenuService {
 
 	Menu saveorUpdateMenu(Menu menu);
 
-	int removeMenu(int id);
+	int deleteMenu(int id);
 
-	Menu getMenuById(int id);
+	Menu getMenuByResturantId(int id);
 
 	List<Menu> findAllMenu();
 

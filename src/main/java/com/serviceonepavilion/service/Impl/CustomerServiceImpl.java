@@ -1,11 +1,13 @@
 package com.serviceonepavilion.service.Impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.serviceonepavilion.entities.Customer;
+import com.serviceonepavilion.entities.Item;
 import com.serviceonepavilion.repository.CustomerRepository;
 import com.serviceonepavilion.service.CustomerService;
 
@@ -38,7 +40,9 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public List<Customer> findAllCustomer() {
-		List<Customer> listCustomers = customerRepository.findAll();
+		//List<Customer> listCustomers = customerRepository.findAll();
+		List<Customer> listCustomers = new ArrayList<>();
+		customerRepository.findAll().forEach(listCustomers::add);
 		return listCustomers;
 	}
 }
