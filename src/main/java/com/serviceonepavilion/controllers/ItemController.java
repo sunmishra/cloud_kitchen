@@ -25,18 +25,18 @@ public class ItemController {
 		return item;
 	}
 	
-	@GetMapping("/getAllItem")
+	@GetMapping("/items")
 	public List<Item> getAllItem() {
 		List<Item> list = itemService.findAllItem();
 		return list;
 	}
 	
-	@PostMapping("/postItem")
+	@PostMapping("/item")
 	public Item saveItem(@RequestBody Item item) {
 		return itemService.saveorUpdateItem(item);
 	}
 	
-	@DeleteMapping("/removeItem/{itemId}")
+	@DeleteMapping("/item/{itemId}")
 	public int removeItem(@PathVariable int itemId) {
 		return itemService.removeItem(itemId);
 	}

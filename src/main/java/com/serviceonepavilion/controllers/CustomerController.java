@@ -19,25 +19,25 @@ public class CustomerController {
 	@Autowired
 	CustomerService customerService;
 	
-	@GetMapping("/getCustomer/{customerId}")
+	@GetMapping("/customer/{customerId}")
 	public Customer getCustomer(@PathVariable int customerId) {
 		Customer customer = customerService.getCustomerById(customerId);
 		return customer;
 	}
 	
-	@GetMapping("/getAllCustomer")
+	@GetMapping("/customers")
 	public List<Customer> getAllCustomer( ) {
 		List<Customer> list = customerService.findAllCustomer();
 		return list;
 	}
 	
-	@PostMapping("/postCustomer")
+	@PostMapping("/customer")
 	public Customer saveCustomer(@RequestBody Customer customer) {
 		return customerService.saveorUpdateCustomer(customer);
 	}
 	
-	@DeleteMapping("/removeCustomer/{customerId}")
-	public int removeCustomer(@PathVariable int customerId) {
+	@DeleteMapping("/customer/{customerId}")
+	public int deleteCustomer(@PathVariable int customerId) {
 		return customerService.removeCustomer(customerId);
 	}
 

@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+
+@Data
 @Entity
 @Table(name = "ADDRESS_TABLE")
 public class Address {
@@ -33,70 +36,4 @@ public class Address {
 	private Customer customerAddress;
 
 	
-	public Address() {
-		
-	}
-	
-	public Address(int addressId, String address, String houseNo, String cityName, String pincode, String state,
-			Customer customerAddress) {
-		super();
-		this.addressId = addressId;
-		this.address = address;
-		this.houseNo = houseNo;
-		this.cityName = cityName;
-		this.pincode = pincode;
-		this.state = state;
-		this.customerAddress = customerAddress;
-	}
-
-	public int getAddressId() {
-		return addressId;
-	}
-
-	public void setAddressId(int addressId) {
-		this.addressId = addressId;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getHouseNo() {
-		return houseNo;
-	}
-
-	public void setHouseNo(String houseNo) {
-		this.houseNo = houseNo;
-	}
-
-	public String getCityName() {
-		return cityName;
-	}
-
-	public void setCityName(String cityName) {
-		this.cityName = cityName;
-	}
-
-	public String getPincode() {
-		return pincode;
-	}
-
-	public void setPincode(String pincode) {
-		this.pincode = pincode;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	
-
 }
