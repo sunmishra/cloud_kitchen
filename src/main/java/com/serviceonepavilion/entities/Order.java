@@ -35,11 +35,11 @@ public class Order {
 	@Column(name = "PAYMENT_TYPE")
 	private PaymentType paymentType;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Resturant.class)
-	@JoinColumn(name = "resturantId", referencedColumnName = "RESTURANT_ID")
+	@OneToOne(cascade = CascadeType.ALL )
+	@JoinColumn(name = "resturantId" )
 	private Resturant resturant;
 	
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Customer.class, fetch = FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "CUSTOMER_ID")
 	private Customer customerId;
 

@@ -27,11 +27,11 @@ public class Customer {
 	@Column(name = "CUSTOMER_ADDRESS")
 	private Address customerAddress;
 
-	//@OneToMany - non owning side here we use mappedBy
-	@OneToMany( mappedBy = "customerAddress",  targetEntity = Address.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	//@OneToMany - non owning side here we use mappedBy(mappedBy requires field name of owning entity not col name)
+	@OneToMany( mappedBy = "customerAddress", cascade = CascadeType.ALL)
 	private List<Address> addressList;
 	
-	@OneToMany( mappedBy = "customerOrder",  targetEntity = Order.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany( mappedBy = "customerId",  cascade = CascadeType.ALL)
 	private List<Order> orderList;
 
 

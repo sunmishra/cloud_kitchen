@@ -31,8 +31,8 @@ public class Address {
 	private String state;
 	
 	//Owning side i.e. @ManyToOne- here we use @JoinCol
-	@ManyToOne(fetch = FetchType.LAZY, targetEntity = Customer.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "CUSTOMER_ID")
+	@ManyToOne(fetch = FetchType.EAGER,  cascade = CascadeType.ALL)
+	@JoinColumn(name = "CUSTOMER_ID")//@JoinCol requires col. Name
 	private Customer customerAddress;
 
 	

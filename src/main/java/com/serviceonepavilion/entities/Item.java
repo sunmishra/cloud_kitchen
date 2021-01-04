@@ -26,9 +26,9 @@ public class Item {
 	@Column(name = "itemPrice")
 	private double price;
 	
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Menu.class, fetch = FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "MENU_ID")
-	private Menu mId;
+	private Menu menuId;
 
 	
 

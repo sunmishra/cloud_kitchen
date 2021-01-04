@@ -24,11 +24,11 @@ public class Menu {
 	@Column(name = "CATEGORY")
 	private String menuCategory;
 	
-	@OneToMany( mappedBy = "itemId",  cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Item.class)
+	@OneToMany( mappedBy = "menuId",  cascade = CascadeType.ALL )
 	private List<Item> itemList;
 	
-	@OneToOne( mappedBy = "resturantMenu",  cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Resturant.class)
-	private Resturant menu;
+//	@OneToOne( mappedBy = "resturantMenu",  cascade = CascadeType.ALL )
+//	private Resturant menu;
 
 	
 

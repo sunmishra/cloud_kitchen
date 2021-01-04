@@ -33,11 +33,11 @@ public class Resturant {
 	private Time closingTime;
 	//workingdays
 	
-	@OneToOne( mappedBy = "resturantOrder",  cascade = CascadeType.ALL, targetEntity = Order.class, fetch = FetchType.LAZY)
-	private Order order;
+//	@OneToOne( mappedBy = "resturant",  cascade = CascadeType.ALL )
+//	private Order order;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Menu.class )
-	@JoinColumn(name = "menuId", referencedColumnName = "MENU_ID")
+	@OneToOne(cascade = CascadeType.ALL )
+	@JoinColumn(name = "menuId")
 	private Menu resturantMenu;
 
 

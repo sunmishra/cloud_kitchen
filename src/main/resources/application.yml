@@ -5,7 +5,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
   datasource:
-    initialization-mode: never
+    initialization-mode: always
     url: jdbc:mysql://localhost:3306/sh09
     username: root
     password: shivam 
