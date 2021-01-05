@@ -24,8 +24,8 @@ public class Customer {
 	private String customerName;
 	@Column(name = "CUSTOMER_CONTACT")
 	private String customerContactNo;
-	@Column(name = "CUSTOMER_ADDRESS")
-	private Address customerAddress;
+	//@Column(name = "CUSTOMER_ADDRESS")
+	//private Address customerAddress;
 
 	//@OneToMany - non owning side here we use mappedBy(mappedBy requires field name of owning entity not col name)
 	@OneToMany( mappedBy = "customerAddress", cascade = CascadeType.ALL)
