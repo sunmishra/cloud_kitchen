@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Data
@@ -33,6 +36,8 @@ public class Address {
 	//Owning side i.e. @ManyToOne- here we use @JoinCol
 	@ManyToOne(fetch = FetchType.EAGER,  cascade = CascadeType.ALL)
 	@JoinColumn(name = "CUSTOMER_ID")//@JoinCol requires col. Name
+	@JsonManagedReference
+//	@JsonIgnore
 	private Customer customerAddress;
 
 	

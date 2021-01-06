@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Data
@@ -28,6 +31,8 @@ public class Item {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "MENU_ID")
+	@JsonManagedReference
+//	@JsonIgnore
 	private Menu menuId;
 
 	

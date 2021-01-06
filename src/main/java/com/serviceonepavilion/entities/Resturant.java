@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Data
@@ -38,6 +41,8 @@ public class Resturant {
 	
 	@OneToOne(cascade = CascadeType.ALL )
 	@JoinColumn(name = "menuId")
+	@JsonManagedReference
+//	@JsonIgnore
 	private Menu resturantMenu;
 
 

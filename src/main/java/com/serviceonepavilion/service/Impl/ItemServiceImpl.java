@@ -20,9 +20,10 @@ public class ItemServiceImpl implements ItemService {
 		Item customerItem = null;
 		if (!itemRepository.existsById(item.getItemId())) {
 			customerItem = itemRepository.save(item);
-		} else
-			customerItem = itemRepository.update();
-		return customerItem;
+		}
+//		} else
+//			customerItem = itemRepository.update();
+	return customerItem;
 	}
 
 	public int removeItem(int id) {

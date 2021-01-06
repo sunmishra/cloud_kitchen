@@ -7,6 +7,5 @@ import com.serviceonepavilion.entities.Item;
 
 public interface ItemRepository extends CrudRepository<Item, Integer>{
 
-	Item update();
 
 }

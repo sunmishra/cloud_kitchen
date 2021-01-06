@@ -8,6 +8,6 @@ import com.serviceonepavilion.entities.Item;
 
 public interface CustomerRepository extends CrudRepository<Customer, Integer>{
 
-	Customer update();
+	
 
 }

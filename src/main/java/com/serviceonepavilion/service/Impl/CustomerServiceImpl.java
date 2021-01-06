@@ -22,9 +22,11 @@ public class CustomerServiceImpl implements CustomerService {
 		Customer cust = null;
 		if (!customerRepository.existsById(customer.getCustomerId())) {
 			cust = customerRepository.save(customer);
-		} else
-			cust = customerRepository.update();
-		return cust;
+		}
+//		} else
+//			cust = customerRepository.update();
+//		return cust;
+		return customer;
 	}
 
 	@Override

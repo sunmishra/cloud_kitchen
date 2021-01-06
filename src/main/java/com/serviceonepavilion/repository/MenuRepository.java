@@ -8,6 +8,5 @@ import com.serviceonepavilion.entities.Menu;
 
 public interface MenuRepository extends CrudRepository<Menu, Integer>{
 
-	Menu update();
 
 }

@@ -8,6 +8,5 @@ import com.serviceonepavilion.entities.Order;
 
 public interface OrderRepository extends CrudRepository<Order, Integer>{
 
-	Order update();
 
 }

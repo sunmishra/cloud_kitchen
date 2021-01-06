@@ -22,8 +22,9 @@ public class OrderServiceImpl implements OrderService{
 		Order customerItem = null;
 		if (!orderRepository.existsById(order.getOrderId())) {
 			customerItem = orderRepository.save(order);
-		} else
-			customerItem = orderRepository.update();
+		}
+//		} else
+//			customerItem = orderRepository.update();
 		return customerItem;
 	}
 

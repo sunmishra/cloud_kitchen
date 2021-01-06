@@ -11,6 +11,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.Data;
 
 @Data
@@ -25,6 +27,7 @@ public class Menu {
 	private String menuCategory;
 	
 	@OneToMany( mappedBy = "menuId",  cascade = CascadeType.ALL )
+	@JsonBackReference
 	private List<Item> itemList;
 	
 //	@OneToOne( mappedBy = "resturantMenu",  cascade = CascadeType.ALL )

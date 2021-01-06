@@ -12,6 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Data
@@ -19,7 +22,7 @@ import lombok.Data;
 @Table(name = "ORDER_TABLE")
 public class Order {
 	@Id
-	@Column(name = "OPRDER_ID")
+	@Column(name = "ORDER_ID")
 	//@GeneratedValue
 	private int orderId;
 	@Column(name = "CUSTOMER_NAME")
@@ -37,10 +40,14 @@ public class Order {
 	@Column(name = "PAYMENT_TYPE")
 	private PaymentType paymentType;
 	
+	@JsonManagedReference
+	@JsonIgnore
 	@OneToOne(cascade = CascadeType.ALL )
 	@JoinColumn(name = "resturantId" )
 	private Resturant resturant;
 	
+	@JsonManagedReference
+//	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "CUSTOMER_ID")
 	private Customer customerId;

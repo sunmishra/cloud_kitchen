@@ -22,8 +22,9 @@ public class MenuServiceImpl implements MenuService{
 		Menu m = null;
 		if (!menuRepository.existsById(menu.getMenuId())) {
 			m = menuRepository.save(menu);
-		} else
-			m = menuRepository.update();
+		}
+//		} else
+//			m = menuRepository.update();
 		return m;
 	}
 

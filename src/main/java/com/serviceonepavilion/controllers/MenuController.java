@@ -1,5 +1,7 @@
 package com.serviceonepavilion.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.serviceonepavilion.entities.Customer;
 import com.serviceonepavilion.entities.Menu;
 import com.serviceonepavilion.service.MenuService;
 
@@ -18,10 +21,16 @@ public class MenuController {
 	@Autowired
 	MenuService menuService;
 
-	@GetMapping("/menu")
+	@GetMapping("/menu/{resturantId}")
 	public Menu menu(@PathVariable int resturantId) {
 		Menu menu = menuService.getMenuByResturantId(resturantId);
 		return menu;
+	}
+	
+	@GetMapping("/menus")
+	public List<Menu> getAllCustomer( ) {
+		List<Menu> list = menuService.findAllMenu();
+		return list;
 	}
 
 	@PostMapping("/menu")
